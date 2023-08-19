@@ -6,10 +6,10 @@ import mongoose from "mongoose";
 // app.use(express.json());
 // app.use(express.urlencoded());
 // app.use(cors());
-const DB = process.env.DATABASE
+
 
 const conectDb = ()=>{
-    const conn = mongoose.connect(DB, {
+    const conn = mongoose.connect(process.env.DATABASE, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     }).then(() => console.log("database connected")).catch((err) => console.log(err))
