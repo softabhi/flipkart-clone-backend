@@ -17,7 +17,7 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser())
 app.use(express.urlencoded({extended:false}));
-app.use(cors());
+app.use(cors({credentials:true}));
 app.use('/uploads',express.static('uploads'))
 
 app.use('/api/v1/', users)
