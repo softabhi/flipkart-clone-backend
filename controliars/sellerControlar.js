@@ -101,6 +101,8 @@ export const sellerLogin = async (req, res) => {
 }
 
  
+
+
  export const verifyToken = (req, res, next) => {
     const cookies = req.headers.cookie;
     console.log(cookies)
