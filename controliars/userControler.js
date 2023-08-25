@@ -107,19 +107,21 @@ export const login = async (req, res) => {
 }
 
 
-// export const getUsers = async (req, res) => {
+export const getUsers = async (req, res) => {
 
-//     // console.log("helllo")
+    // console.log("helllo")
 
-//     try {
-//         const users = await UserDb.find({})
-//             .then((data) => {
-//                 res.send(data);
-//             })
-//     } catch (error) {
-//         res.send("users not found");
-//     }
-// }
+    try {
+        const users = await UserDb.find({})
+            .then((data) => {
+                res.send(data);
+            })
+    } catch (error) {
+        res.send("users not found");
+    }
+}
+
+
 
 export const getSingleUser = async (req, res) => {
 
@@ -138,6 +140,9 @@ export const getSingleUser = async (req, res) => {
         res.send("users not found");
     }
 }
+
+
+
 export const deleteUser = async (req, res) => {
 
     const { id } = req.params;
@@ -153,6 +158,8 @@ export const deleteUser = async (req, res) => {
         res.send("users not found");
     }
 }
+
+
 
 
 export const editUser = async (req, res) => {
