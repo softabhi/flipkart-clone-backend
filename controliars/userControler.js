@@ -107,7 +107,7 @@ export const login = async (req, res) => {
 }
 
 
-export const getUsers = async (req, res) => {
+export const getUsers = async(req, res) => {
 
     // console.log("helllo")
 
@@ -120,6 +120,22 @@ export const getUsers = async (req, res) => {
         res.send("users not found");
     }
 }
+
+// export const gettingProducsts = async(req ,res)=>{
+//     try{
+//          const products = await productDb.find({})
+//          .then((data)=>{
+//           res.send(data)
+//          })
+         
+            
+         
+//       //    console.log()
+//     }catch(error){
+//        res.send("not found data");
+//     } 
+//   }
+
 
 
 
