@@ -42,5 +42,14 @@ export const gettingProducsts = async(req ,res)=>{
 export const getSigleProduct =async (req,res)=>{
    const id = req.pramas;
 
-   const singleProduct = await productDb.findOne({_id:id});
+   
+   try {
+      const singleProduct = await productDb.findOne({_id:id})
+      .then((data)=>{
+         res.send(data)
+      })
+
+   } catch (error) {
+      res.send("product not found")
+   }
 }
