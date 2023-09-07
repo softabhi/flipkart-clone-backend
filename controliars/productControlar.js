@@ -39,8 +39,8 @@ export const gettingProducsts = async(req ,res)=>{
 
 
 
-export const getSigleProduct =async (req,res)=>{
-   const id = req.pramas;
+export const getSigleProduct = async (req,res)=>{
+   const {id} = req.pramas;
 
    
    try {
