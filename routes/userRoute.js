@@ -14,7 +14,7 @@ const router = express.Router();
 // router.route("/").post(register); 
 router.post("/registration",upload.single('profileImg'),register)
 router.post("/login",login)
-router.get("/allUsers",getUsers)
+router.get("/allUsers",authentication,getUsers)
 router.get("/singleUser/:id",getSingleUser)
 router.delete("/deleteUser/:id",deleteUser)
 router.put("/editUser/:id",upload.single('profileImg'),editUser)

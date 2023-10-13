@@ -40,6 +40,7 @@ export const sellerRegister = async (req, res) => {
 export const sellerLogin = async (req, res) => {
 
     const { email, password } = req.body;
+    console.log("mona")
 
     try {
         console.log(email);
@@ -70,29 +71,40 @@ export const sellerLogin = async (req, res) => {
 
                 // })
 
-                const webToken = jwt.sign({id:user._id }, process.env.JWT_SECRET, { expiresIn: '35s' });
+                // const webToken = jwt.sign({ id: user._id }, secreate, { expiresIn: '350s' });
+
+                const webToken = jwt.sign(
+                    {
+                        name: user.name,
+                        email: user.email,
+                    },
+                    secreate
+                    ,{ expiresIn: '500s' }
+                )
+
 
                 // console.log(webToken)
 
-                if (req.cookies[`${user._id}`]) {
-                    req.cookies[`${user._id}`] = "";
-                  }
+                //     if (req.cookies[`${user._id}`]) {
+                //         req.cookies[`${user._id}`] = "";
+                //       }
 
-                res.cookie(String(user._id), webToken, {
-                    path: "/",
-                    expires: new Date(Date.now() + 1000 * 30), // 30 seconds
-                    httpOnly: true,
-                    sameSite: "lax",
-                });
+                //     res.cookie(String(user._id), webToken, {
+                //         path: "/",
+                //         expires: new Date(Date.now() + 1000 * 30), // 30 seconds
+                //         httpOnly: true,
+                //         sameSite: "lax",
+                //     });
 
-                     res
-                    .status(200)
-                    .json({ message: "Successfully Logged In", user, webToken });
+                         res
+                        .status(200)
+                        .json({ message: "Successfully Logged In", user, webToken });
 
-                // res.send({massage:"login successfully",user});
-            } else {
-                res.send({ massage: "username or password is wrong" });
-            }
+                    // res.send({massage:"login successfully",user});
+                } else {
+                    res.send({ massage: "username or password is wrong" });
+                }
+            
         }
     } catch (error) {
         res.send("user is not found")
@@ -100,10 +112,10 @@ export const sellerLogin = async (req, res) => {
 
 }
 
- 
 
 
- export const verifyToken = (req, res, next) => {
+
+export const verifyToken = (req, res, next) => {
     const cookies = req.headers.cookie;
     console.log(cookies)
     // const token = cookies.split("=")[1];
@@ -118,10 +130,10 @@ export const sellerLogin = async (req, res) => {
     //   req.id = user.id;
     // });
     // next();
-  };
+};
 
 
-  export const getUsers = async (req, res) => {
+export const getUsers = async (req, res) => {
 
     // console.log("helllo")
 
