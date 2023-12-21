@@ -4,32 +4,33 @@ const userSchema = mongoose.Schema({
    
     name: {
         type:String,
-        require:true
+        required:true
     },
     userName: {
         type:String,
-        require:true
+        required:true
     },
     email: {
         type:String,
-        require:true
+        required:true
     },
     password: {
         type:String,
-        require:true
+        required:true
     },
     profileImg: {
         type:String,
-        require:true
+        required:true
     },
     address: {
         type:String,
-        require:true
+        required:true
     },
     mobileNumber: {
         type:String,    
-        require:true
-    }
+        required:true
+    },
+    cart:[{type:mongoose.Schema.Types.ObjectId,ref:'productDb',required:true}]
 },{timestamps:true})
 
 export const UserDb = new mongoose.model("UserDb", userSchema);

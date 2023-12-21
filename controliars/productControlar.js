@@ -30,7 +30,7 @@ export const gettingProducsts = async(req ,res)=>{
        })
        
           
-       
+   
     //    console.log()
   }catch(error){
      res.send("not found data");
