@@ -19,6 +19,7 @@ app.use(cookieParser())
 app.use(express.urlencoded({extended:false}));
 app.use(cors({credentials:true,origin:"*"}));
 app.use('/uploads',express.static('uploads'))
+app.set('view engine', 'ejs');
 
 app.use('/api/v1/', users)
 app.use('/api/v2/', products)

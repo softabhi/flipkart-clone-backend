@@ -3,7 +3,7 @@ import express from "express";
 import multer from "multer";
 const upload = multer({ dest: 'uploads/'})
 
-import {  deleteUser, editUser, getSingleUser, login, register } from "../controliars/userControler.js";
+import {  deleteUser, editUser, ejsFunct, getSingleUser, login, register } from "../controliars/userControler.js";
 import { sellerRegister, sellerLogin, verifyToken, getUsers } from "../controliars/sellerControlar.js";
 import { authentication } from "../middelware/auth.js";
 
@@ -22,6 +22,8 @@ router.put("/editUser/:id",upload.single('profileImg'),editUser)
 
 router.post("/sellerRegistration",upload.single('profileImg'),sellerRegister)
 router.post("/sellerLogin",sellerLogin)
+
+router.get("/ejsApi",ejsFunct)
 
 // router.post("/addProduct",upload.single('produImg'),newProduct)
 // router.get("/products",gettingProducsts)

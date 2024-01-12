@@ -146,7 +146,7 @@ export const gettingCartProducts = async (req, res) => {
   // console.log(id)
   try {
     // const result = await UserDb.findOne({ _id: id }).populate('cart')
-    const result = await addToCart.find({ user: id }).populate('cartItems.product')
+    const result = await addToCart.findOne({ user: id }).populate('cartItems.product')
     .then((data)=>{
       console.log(data)
     })

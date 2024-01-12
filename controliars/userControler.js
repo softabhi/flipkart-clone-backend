@@ -232,3 +232,6 @@ export const editUser = async (req, res) => {
     }
 }
 
+export const ejsFunct = async(req,res)=>{
+   res.render('home')
+}
