@@ -97,12 +97,11 @@ export const sellerLogin = async (req, res) => {
                 //     });
 
                          res
-                        .status(200)
-                        .json({ message: "Successfully Logged In", user, webToken });
+                       .send({ "massage": "Successfully Logged In", user, webToken });
 
                     // res.send({massage:"login successfully",user});
                 } else {
-                    res.send({ massage: "username or password is wrong" });
+                    res.send({ "massage": "username or password is wrong" });
                 }
             
         }

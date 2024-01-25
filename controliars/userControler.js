@@ -31,7 +31,7 @@ export const register = async (req, res) => {
         })
 
         await newUser.save();
-        res.send("new user register ,thank you");
+        res.send("new user register");
     } catch {
         res.send("found something wrong");
     }
@@ -88,16 +88,16 @@ export const login = async (req, res) => {
                     sameSite: "lax",
                   });
 
-                  res
-                  .status(200)
-                  .json({ message: "Successfully Logged In", user, webToken });
+                 
+                  res.send({ "message": "Successfully Logged In", user, webToken });
+                  
 
                 // res.send({ massage: "login successfully", user });
                 // localStorage.setItem('token',webToken)
                 // res.status(200).json({massage: "login successfully",user})
                 
             } else {
-                res.send({ massage: "username or password is wrong" });
+                res.send({ "massage": "username or password is wrong" });
             }
         }
     } catch (error) {
