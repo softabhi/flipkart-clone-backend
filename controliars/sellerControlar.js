@@ -29,9 +29,9 @@ export const sellerRegister = async (req, res) => {
         })
 
         await newUser.save();
-        res.send("new seller register ,thank you");
+        res.send("New Seller Register");
     } catch {
-        res.send("found something wrong");
+        res.send("Found Something Wrong");
     }
 };
 
@@ -53,8 +53,8 @@ export const sellerLogin = async (req, res) => {
 
         const passChecking = await comparePassword(password, existPassword)
 
-        console.log(existPassword)
-        console.log(passChecking)
+        // console.log(existPassword)
+        // console.log(passChecking)
 
         // console.log(hashedpass);
 
