@@ -43,8 +43,8 @@ export const sellerLogin = async (req, res) => {
     console.log("mona")
 
     try {
-        console.log(email);
-        console.log(password);
+        // console.log(email);
+        // console.log(password);
 
 
         const user = await SellerDb.findOne({ email: email });

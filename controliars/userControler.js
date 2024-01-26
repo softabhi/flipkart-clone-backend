@@ -89,7 +89,7 @@ export const login = async (req, res) => {
                   });
 
                  
-                  res.send({ "message": "Successfully Logged In", user, webToken });
+                  res.send({ "massage": "Successfully Logged In", user, webToken });
                   
 
                 // res.send({ massage: "login successfully", user });

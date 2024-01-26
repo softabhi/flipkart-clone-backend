@@ -7,7 +7,7 @@ const productSchema = new mongoose.Schema({
     },
     category:{
         type:String,
-        required:true
+        // required:true
     },
     price:{
         type:String,
@@ -23,7 +23,7 @@ const productSchema = new mongoose.Schema({
     },
     description:{
         type:String,
-        required:true
+        // required:true
     },
     produImg:{
         type:String,
