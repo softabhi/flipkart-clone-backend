@@ -106,7 +106,7 @@ export const sellerLogin = async (req, res) => {
             
         }
     } catch (error) {
-        res.send("user is not found")
+        res.send( {"massage":"user is not found"});
     }
 
 }
