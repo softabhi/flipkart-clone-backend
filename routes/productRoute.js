@@ -4,6 +4,7 @@ import multer from "multer";
 const upload = multer({ dest: 'uploads/'})
 import {deleteProduct, getSigleProduct, gettingProducsts, newProduct } from "../controliars/productControlar.js";
 import { DeleteCart, addCartFunc, decreaseCartItemFunc, gettingCartProducts, increaseCartItemFunc } from "../controliars/addCartControlar.js";
+import { orderItemAdd } from "../controliars/orderControlar.js";
 
 
 const router = express.Router();
@@ -17,5 +18,6 @@ router.post("/increaseCartItem",increaseCartItemFunc)
 router.post("/decreaseCartItem",decreaseCartItemFunc)
 router.get("/cartItems/:id",gettingCartProducts)
 router.post("/deleteCartItem/",DeleteCart)
+router.post("/orderadd/",orderItemAdd)
 
 export default router
